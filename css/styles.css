@@ -1,0 +1,67 @@
+:root {
+  /* Colores base */
+  --bg-color: #ffffff;
+  --text-color: #1a1a1a;
+  --primary-color: #007bff;
+}
+
+body {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  font-family: sans-serif;
+  transition:
+    background-color 0.3s,
+    color 0.3s;
+}
+
+/* Ajuste para imágenes */
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+#hero img {
+  width: 400px;
+  margin: 20px auto;
+}
+
+/* Resaltar enlaces al pasar el mouse */
+a {
+  color: var(--primary-color);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+a:hover {
+  color: #0056b3;
+  text-decoration: underline;
+}
+
+/* Transición en botones */
+button {
+  background-color: var(--primary-color);
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  transition:
+    transform 0.2s,
+    background-color 0.2s;
+}
+
+button:hover {
+  background-color: #0056b3;
+  transform: scale(1.05);
+}
+
+/* Dark Mode */
+body.dark-mode {
+  --bg-color: #1a1a1a;
+  --text-color: #f4f4f4;
+}
+
+body.dark-mode {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+}
