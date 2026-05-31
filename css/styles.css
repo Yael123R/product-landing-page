@@ -44,7 +44,7 @@ a:hover {
      2. COMPONENTES GLOBALES (BOTONES Y MICROINTERACCIONES)
      ========================================================================== */
 button,
-#contacto button {
+.plan .btn {
   background-color: var(--primary-color);
   color: white;
   border: none;
@@ -59,14 +59,32 @@ button,
 }
 
 button:hover,
-#contacto button:hover {
+.plan .btn:hover {
   background-color: #0056b3;
   transform: translateY(-2px) scale(1.02);
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+  text-decoration: none;
+}
+
+/* Formulario de contacto específico */
+#contacto button {
+  margin-top: 16px;
+  padding: 12px;
+  background: #1a1a1a;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+#contacto button:hover {
+  background-color: #333333;
 }
 
 /* ==========================================================================
-     3. ESTRUCTURA LAYOUT (MOBILE FIRST)
+     3. ESTRUCTURA LAYOUT E INTERFACES (MOBILE FIRST)
      ========================================================================== */
 
 /* Header & Nav */
@@ -241,22 +259,13 @@ header nav .logo {
   font-weight: 600;
 }
 
-#contacto input {
+#contacto input,
+#contacto select,
+#contacto textarea {
   padding: 8px;
   border: 1px solid #e0e0e0;
   border-radius: 4px;
   font: inherit;
-}
-
-#contacto button {
-  margin-top: 16px;
-  padding: 12px;
-  background: #1a1a1a;
-  color: #fff;
-  border: none;
-  border-radius: 4px;
-  font-weight: 600;
-  cursor: pointer;
 }
 
 /* Footer */
@@ -297,7 +306,7 @@ footer a {
 }
 
 /* ==========================================================================
-     4. MODOS VISUALES (DARK MODE)
+     4. MODOS VISUALES (DARK MODE GLOBAL)
      ========================================================================== */
 body.dark-mode {
   --bg-color: #1a1a1a;
@@ -308,7 +317,9 @@ body.dark-mode {
 
 body.dark-mode #caracteristicas .card,
 body.dark-mode .galeria figure,
-body.dark-mode .testimonio-card {
+body.dark-mode .testimonio-card,
+body.dark-mode .logo-client,
+body.dark-mode .plan {
   background-color: #222222;
   border-color: #333333;
 }
@@ -317,18 +328,267 @@ body.dark-mode footer {
   background-color: #111111;
 }
 
+body.dark-mode #contacto button {
+  background-color: #f4f4f4;
+  color: #1a1a1a;
+}
+
 /* ==========================================================================
-     5. RESPONSIVIDAD (MEDIA QUERIES)
+     5. SECCIÓN PLANES Y PRECIOS 
+     ========================================================================== */
+#content-precios {
+  text-align: center;
+  padding: 40px 20px 20px 20px;
+}
+
+#content-precios h1 {
+  font-size: 2.2rem;
+  margin-bottom: 8px;
+}
+
+.planes {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 24px;
+  padding: 32px;
+  margin: 0 auto;
+}
+
+.plan {
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  padding: 24px;
+  background: #fdfdfd;
+  min-height: 320px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  position: relative;
+  align-items: center;
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.plan .badge {
+  position: absolute;
+  top: -12px;
+  right: 16px;
+  background-color: var(--primary-color);
+  color: #ffffff;
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  padding: 4px 12px;
+  border-radius: 20px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  letter-spacing: 0.5px;
+}
+
+.plan .precio {
+  font-size: 32px;
+  font-weight: 700;
+  margin: 16px 0;
+  color: var(--text-color);
+}
+
+.plan .detalle-precio {
+  font-size: 1rem;
+  font-weight: 400;
+  color: #666;
+}
+
+.plan ul {
+  list-style: none;
+  text-align: center;
+  margin-bottom: 16px;
+}
+
+.plan ul li {
+  margin-bottom: 8px;
+  font-size: 0.95rem;
+}
+
+.plan-destacado:hover {
+  transform: translateY(-4px) scale(1.03);
+  box-shadow: 0 12px 24px rgba(0, 123, 255, 0.2);
+}
+
+.plan:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+}
+
+/* Ajustes de modo oscuro para planes */
+body.dark-mode .plan .detalle-precio {
+  color: #aaa;
+}
+
+body.dark-mode .plan-destacado {
+  background-color: #1a2433;
+  border-color: var(--primary-color);
+}
+
+/* ==========================================================================
+     6. SECCIÓN CLIENTES (LOGOS)
+     ========================================================================== */
+.clientes {
+  padding: 32px;
+  margin: 0 auto;
+}
+
+.clientes h2 {
+  text-align: center;
+  margin-bottom: 24px;
+}
+
+.logos {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 16px;
+  margin-top: 16px;
+}
+
+.logo-client {
+  background-color: #f5f5f5;
+  padding: 24px;
+  text-align: center;
+  font-weight: 700;
+  border-radius: 8px;
+  color: var(--text-color);
+  border: 1px solid transparent;
+  transition:
+    transform 0.2s ease,
+    background-color 0.2s ease;
+}
+
+.logo-client:hover {
+  transform: scale(1.03);
+}
+
+/* ==========================================================================
+     7. SECCIÓN PREGUNTAS FRECUENTES (FAQ.HTML) - MOBILE-FIRST
+     ========================================================================== */
+.faq-container {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 24px;
+  padding: 16px;
+}
+
+.faq-nav {
+  padding: 16px;
+  background-color: #f5f5f5;
+  border-radius: 8px;
+}
+
+.faq-nav h2 {
+  font-size: 1.2rem;
+}
+
+.faq-nav ul {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  gap: 12px;
+  margin-top: 8px;
+}
+
+.faq-main h1 {
+  padding-bottom: 16px;
+  font-size: 2rem;
+  text-align: center;
+}
+
+.faq-main details {
+  border-bottom: 1px solid #e0e0e0;
+  padding: 16px 0;
+}
+
+.faq-main summary {
+  font-weight: 600;
+  cursor: pointer;
+  outline: none;
+  transition: color 0.2s;
+  color: var(--text-color);
+}
+
+.faq-main summary:hover {
+  color: var(--primary-color);
+}
+
+.faq-main p {
+  padding-top: 8px;
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+/* Ajustes específicos de modo oscuro en FAQ */
+body.dark-mode .faq-nav {
+  background-color: #222222;
+}
+
+body.dark-mode .faq-main details {
+  border-bottom-color: #333333;
+}
+
+/* ==========================================================================
+     8. ESTRUCTURAS DE RETOS CON GRID GLOBAL (INDEX.HTML)
+     ========================================================================== */
+.index-layout {
+  display: grid;
+  grid-template-areas:
+    "header"
+    "main"
+    "footer";
+  grid-template-columns: 1fr;
+  min-height: 100vh;
+}
+
+.index-layout header {
+  grid-area: header;
+}
+.index-layout main {
+  grid-area: main;
+}
+.index-layout footer {
+  grid-area: footer;
+}
+
+/* ==========================================================================
+     9. RESPONSIVIDAD Y ADAPTACIÓN (MEDIA QUERIES COMPLETAS)
      ========================================================================== */
 
-/* ===== TABLET (640px en adelante) ===== */
+/* ===== MODO TABLET / INTERMEDIO (Desde 640px) ===== */
 @media (min-width: 640px) {
   .galeria figure {
     width: 45%;
   }
+
+  .planes {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  /* RETO AUTÓNOMO DE FAQ: Inversión completa usando áreas nombradas (Main a la izq, Nav a la der) */
+  .faq-container {
+    grid-template-areas: "main nav";
+    grid-template-columns: 1fr 288px;
+  }
+
+  .faq-main {
+    grid-area: main;
+  }
+  .faq-nav {
+    grid-area: nav;
+  }
+
+  .faq-nav ul {
+    flex-direction: column;
+    gap: 8px;
+  }
 }
 
-/* ===== ESCRITORIO (1024px en adelante) ===== */
+/* ===== MODO ESCRITORIO COMPLETO (Desde 1024px) ===== */
 @media (min-width: 1024px) {
   #hero {
     flex-direction: row;
@@ -365,6 +625,7 @@ body.dark-mode footer {
   #galeria,
   #testimonios,
   #contacto,
+  .faq-container,
   footer {
     padding: 64px 32px;
     max-width: 1200px;
@@ -379,5 +640,15 @@ body.dark-mode footer {
 
   .testimonio-card {
     flex-basis: 300px;
+  }
+
+  .planes {
+    grid-template-columns: repeat(4, 1fr);
+    max-width: 1200px;
+  }
+
+  /* Reto macro en Index: Sticky footer nativo con Grid rows */
+  .index-layout {
+    grid-template-rows: auto 1fr auto;
   }
 }
