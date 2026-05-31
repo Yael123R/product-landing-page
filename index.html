@@ -12,11 +12,12 @@
   <body>
     <header>
       <nav aria-label="Navegación principal">
-        <button id="btn-modo">Cambiar a modo oscuro</button>
+        <a href="#hero" class="logo">SmartStore</a>
         <a href="#hero">Inicio</a>
         <a href="#caracteristicas">Características</a>
         <a href="#faq">Preguntas Frecuentes</a>
-        <a href="#contacto">Contacto</a>
+        <a href="#testimonios">Testimonios</a> <a href="#contacto">Contacto</a>
+        <button id="btn-modo">Cambiar a modo oscuro</button>
       </nav>
     </header>
 
@@ -35,20 +36,28 @@
 
       <section id="caracteristicas">
         <h2>¿Por qué comprar con nosotros?</h2>
-        <ul>
-          <li>
-            <strong>Garantía Real:</strong> Todos nuestros equipos pasan por
-            revisión técnica de más de 20 puntos.
-          </li>
-          <li>
-            <strong>Precios Justos:</strong> El valor real de la tecnología,
-            adaptado a tu presupuesto.
-          </li>
-          <li>
-            <strong>Soporte Post-Venta:</strong> No solo te vendemos el
-            teléfono, te ayudamos a configurarlo.
-          </li>
-        </ul>
+        <div class="cards">
+          <article class="card">
+            <img src="img/icono-1.svg" alt="" width="48" height="48" />
+            <h3>Garantía Real</h3>
+            <p>
+              Todos nuestros equipos pasan por revisión técnica de más de 20
+              puntos.
+            </p>
+          </article>
+
+          <article class="card">
+            <img src="img/icono-2.svg" alt="" width="48" height="48" />
+            <h3>Precios Justos</h3>
+            <p>El valor real de la tecnología, adaptado a tu presupuesto.</p>
+          </article>
+
+          <article class="card">
+            <img src="img/icono-3.svg" alt="" width="48" height="48" />
+            <h3>Soporte Post-Venta</h3>
+            <p>No solo te vendemos el teléfono, te ayudamos a configurarlo.</p>
+          </article>
+        </div>
       </section>
 
       <section id="faq">
@@ -73,6 +82,66 @@
         </div>
       </section>
 
+      <section id="galeria">
+        <h2>Galería</h2>
+        <div class="galeria">
+          <figure>
+            <img
+              src="img/g1.jpg"
+              alt="Vista 1 del producto - Samsung Galaxy S25 Ultra"
+            />
+            <figcaption>Samsung Galaxy S25 Ultra</figcaption>
+          </figure>
+          <figure>
+            <img
+              src="img/g2.jpg"
+              alt="Vista 2 del producto - Huawei Mate 80 Pro"
+            />
+            <figcaption>Huawei Mate 80 Pro</figcaption>
+          </figure>
+          <figure>
+            <img
+              src="img/g3.jpg"
+              alt="Vista 3 del producto - Redmi Note 15 Pro"
+            />
+            <figcaption>Redmi Note 15 Pro</figcaption>
+          </figure>
+          <figure>
+            <img src="img/g4.jpg" alt="Vista 4 del producto - iPhone 17" />
+            <figcaption>iPhone 17</figcaption>
+          </figure>
+        </div>
+      </section>
+
+      <section id="testimonios">
+        <h2>Lo que dicen nuestros clientes</h2>
+        <div class="testimonios-container">
+          <article class="testimonio-card">
+            <p class="comentario">
+              "La atención post-venta fue impecable. Me ayudaron a transferir
+              todos mis datos al nuevo teléfono en minutos. ¡Muy recomendados!"
+            </p>
+            <h4 class="autor">— Carlos Mendoza</h4>
+          </article>
+
+          <article class="testimonio-card">
+            <p class="comentario">
+              "Compré un equipo seminuevo y está literalmente como nuevo. El
+              precio fue el más justo que encontré en el mercado."
+            </p>
+            <h4 class="autor">— Andrea Flores</h4>
+          </article>
+
+          <article class="testimonio-card">
+            <p class="comentario">
+              "Garantía real y sin vueltas. Es genial comprar tecnología con la
+              tranquilidad de que responden ante cualquier duda."
+            </p>
+            <h4 class="autor">— Jano Gómez</h4>
+          </article>
+        </div>
+      </section>
+
       <section id="contacto">
         <h2>Contáctanos</h2>
         <form>
@@ -93,7 +162,7 @@
           <textarea
             id="mensaje"
             name="mensaje"
-            placeholder="Escribe aqui un mensaje..."
+            placeholder="Escribe aquí un mensaje..."
             required
           ></textarea>
 
@@ -103,27 +172,41 @@
     </main>
 
     <footer>
-      <p>Contacto: soporte@smartstore.com</p>
+      <div class="footer-top">
+        <p>Contacto: soporte@smartstore.com</p>
 
-      <a href="https://facebook.com" aria-label="Síguenos en Facebook">
-        <img src="img/facebook.svg" alt="" width="32" height="32" />
-      </a>
+        <div class="social-icons">
+          <a href="https://facebook.com" aria-label="Síguenos en Facebook">
+            <img src="img/facebook.svg" alt="Facebook" width="32" height="32" />
+          </a>
 
-      <a href="https://instagram.com" aria-label="Síguenos en Instagram">
-        <img src="img/instagram.svg" alt="" width="32" height="32" />
-      </a>
+          <a href="https://instagram.com" aria-label="Síguenos en Instagram">
+            <img
+              src="img/instagram.svg"
+              alt="Instagram"
+              width="32"
+              height="32"
+            />
+          </a>
 
-      <a href="https://linkedin.com" aria-label="Síguenos en LinkedIn">
-        <img src="img/linkedin.svg" alt="" width="32" height="32" />
-      </a>
-      <a
-        href="https://wa.me/902598634"
-        aria-label="Escríbenos por WhatsApp para consultas de ventas"
-      >
-        <img src="img/whatsapp.svg" alt="" width="32" height="32" />
-      </a>
+          <a href="https://linkedin.com" aria-label="Síguenos en LinkedIn">
+            <img src="img/linkedin.svg" alt="LinkedIn" width="32" height="32" />
+          </a>
+          <a
+            href="https://wa.me/51902598634"
+            aria-label="Escríbenos por WhatsApp para consultas de ventas"
+          >
+            <img src="img/whatsapp.svg" alt="WhatsApp" width="32" height="32" />
+          </a>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <a href="#">Términos y Condiciones</a>
+        <a href="#">Política de Privacidad</a>
+      </div>
     </footer>
-    
+
     <script src="js/script.js"></script>
   </body>
 </html>
